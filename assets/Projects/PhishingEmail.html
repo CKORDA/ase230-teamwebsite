@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Netrix</title>
+    <style>
+        .image{
+            background-image: url("https://heise.cloudimg.io/width/1920/q75.png-lossy-75.webp-lossy-75.foil1/_www-heise-de_/tipps-tricks/imgs/96/3/0/2/9/0/8/5/netflix-01-4ca2ff4bed77a688.jpeg");
+            background-size: 550px;
+            min-height: 10vh;
+            background-repeat: no-repeat;
+            padding: 50px;
+        }
+        .content{
+            text-align:center;
+            background-color:white;
+            padding: 15px;
+            width: 400px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<p>Hello {{.FirstName}},</p>
+<p>&emsp;Your account information is out of date. Please update in order to maintain access to your Netrix account.</p>
+<p>&emsp;Thank you.</p>
+<p>Netrix,<br /> Account Management Department</p>
+<div class="image">
+    <div class="content">
+        <h2 style="color: red"><strong>Netrix</strong></h2>
+        <h2>Account Verification</h2>
+        <p>Email: <input type="text" /></p>
+        <p>Password: <input type="password" /></p>
+        <p><input type="button" value="Update Account" style="background-color: red;border: none;color: white;padding: 15px 32px;text-align: center;display: inline-block;font-size: 16px;"/></p>
+        <p>&nbsp;</p>
+    <div>
+</div>
+</body>
+</html>
