@@ -20,7 +20,7 @@ $teamMembers = [
         "role" => "Cybersecurity Analyst",
         // "link" => "http://localhost/Assignment_1/Evan_McQueary.php",
         "image" => "assets/images/ProfileEM.jpg"
-       "dateofBirth" =>"--"
+       "dateofBirth" =>"2003-07-01"
     ],
     [
         "name" => "Monju Tanakajima",
