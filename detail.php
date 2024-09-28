@@ -303,6 +303,14 @@ $teamMembers=[
 	
 ];
 $index=$_GET['index'];
+//Function displayWork experience here the person doing this funtion can delete this line.
+
+function memberAge($dateofBirth){
+    $DOB = new DateTime($dateofBirth);
+    $todayDate = new DateTime();
+    $age = $todayDate->diff($DOB)->y;
+    return $age;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en"> 
