@@ -1,0 +1,8 @@
+<?php
+function calculateAge($dob) {
+    $birthDate = new DateTime($dob);
+    $today = new DateTime('today');
+    $age = $birthDate->diff($today)->y;  
+    return $age;
+}
+?>
