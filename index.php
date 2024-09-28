@@ -27,7 +27,7 @@ $teamMembers = [
         "role" => "Cybersecurity Specialist",
         "link" => "",
         "image" => "assets/images/ProfileMT.jpg" 
-        "dateofBirth" =>"--"
+        "dateofBirth" =>"2004-02-07"
     ]
 ];
 ?>
