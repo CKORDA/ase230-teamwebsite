@@ -30,6 +30,12 @@ $teamMembers = [
         "dateofBirth" =>"--"
     ]
 ];
+function memberAge($dateofBirth){
+    $DOB = new DateTime($dateofBirth);
+    $todayDate = new DateTime();
+    $age = $todayDate->diff($DOB)->y;
+    return $age;
+}
 ?>
 
 <!DOCTYPE html>
