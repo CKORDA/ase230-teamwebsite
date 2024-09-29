@@ -6,4 +6,21 @@ function calculateAge($dob) {
     $age = $currentDate->diff($dob);
     return $age->y; // Return the years portion of the difference
 }
+
+// Function to display each member's information in a card
+function displayCard($memberInfo) {
+    $name = $memberInfo['name'];
+    $dob = $memberInfo['dob'];
+    $role = $memberInfo['role'];
+    $age = calculateAge($dob);  // Use the age calculation function
+
+    // Generate the HTML for the card using PHP
+    echo "<div class='card'>";
+    echo "<h2>" . $name . "</h2>";
+    echo "<p>Date of Birth: " . $dob . "</p>";
+    echo "<p>Age: " . $age . "</p>";
+    echo "<p>Role: " . $role . "</p>";
+    echo "</div>";
+}
 ?>
+

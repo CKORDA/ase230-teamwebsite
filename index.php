@@ -1,35 +1,45 @@
 <?php
+include 'Functions.php';
+
 // Define an array for member information
 $teamMembers = [
     [
         "name" => "Cheyenne Korda",
         "role" => "Cyber Security Analyst",
       //  "link" => "http://localhost/ase230/02/CHEYENNE_KORDA.php",
-        "image" => "assets/images/profileCK.jpg"
-         "dateofBirth" =>"2004-03-14"
+        "image" => "assets/images/profileCK.jpg",
+         "dob" =>"2004-03-14"
     ],
     [
-        "name" => "Ramatoulaye signate",
-        "role" => "software developer",
+        "name" => "Ramatoulaye Signate",
+        "role" => "Software Developer",
        // "link" => "http://localhost/nku/ase230/Resume/01/Rama_SIGNATE.php",
-        "image" => "assets/images/profile.jpg"
-      "dateofBirth" =>"2000-11-21"
+        "image" => "assets/images/profile.jpg",
+      "dob" =>"2000-11-21"
     ],
     [
         "name" => "Evan McQueary",
         "role" => "Cybersecurity Analyst",
         // "link" => "http://localhost/Assignment_1/Evan_McQueary.php",
-        "image" => "assets/images/ProfileEM.jpg"
-       "dateofBirth" =>"2003-07-01"
+
+        "image" => "assets/images/ProfileEM.jpg",
+        "dob" =>"--"
+
     ],
     [
         "name" => "Monju Tanakajima",
         "role" => "Cybersecurity Specialist",
         "link" => "",
-        "image" => "assets/images/ProfileMT.jpg" 
-        "dateofBirth" =>"--"
+        "image" => "assets/images/ProfileMT.jpg",
+        "dob" =>"2004-02-07"
     ]
 ];
+
+
+// Loop through each member and call the displayCard function to display their information
+foreach ($teamMembers as $member) {
+    displayCard($member);
+}
 
 function memberAge($dateofBirth){
     $DOB = new DateTime($dateofBirth);
