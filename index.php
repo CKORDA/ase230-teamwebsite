@@ -20,7 +20,7 @@ $teamMembers = [
         "role" => "Cybersecurity Analyst",
         // "link" => "http://localhost/Assignment_1/Evan_McQueary.php",
         "image" => "assets/images/ProfileEM.jpg"
-       "dateofBirth" =>"--"
+       "dateofBirth" =>"2003-07-01"
     ],
     [
         "name" => "Monju Tanakajima",
@@ -30,12 +30,19 @@ $teamMembers = [
         "dateofBirth" =>"--"
     ]
 ];
+
 function memberAge($dateofBirth){
     $DOB = new DateTime($dateofBirth);
     $todayDate = new DateTime();
     $age = $todayDate->diff($DOB)->y;
     return $age;
 }
+
+// write the displayMember function
+
+// write the memberInfo function
+
+
 ?>
 
 <!DOCTYPE html>
