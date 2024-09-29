@@ -21,8 +21,10 @@ $teamMembers = [
         "name" => "Evan McQueary",
         "role" => "Cybersecurity Analyst",
         // "link" => "http://localhost/Assignment_1/Evan_McQueary.php",
+
         "image" => "assets/images/ProfileEM.jpg",
-       "dob" =>"--"
+        "dob" =>"--"
+
     ],
     [
         "name" => "Monju Tanakajima",
@@ -33,10 +35,23 @@ $teamMembers = [
     ]
 ];
 
+
 // Loop through each member and call the displayCard function to display their information
 foreach ($teamMembers as $member) {
     displayCard($member);
 }
+
+function memberAge($dateofBirth){
+    $DOB = new DateTime($dateofBirth);
+    $todayDate = new DateTime();
+    $age = $todayDate->diff($DOB)->y;
+    return $age;
+}
+// write the displayMember function
+
+// write the memberInfo function
+
+
 ?>
 
 <!DOCTYPE html>
