@@ -17,6 +17,7 @@ function displayCard($memberInfo) {
     // Generate the HTML for the card using PHP
     echo "<div class='card'>";
     echo "<h2>" . $name . "</h2>";
+    echo "<p>Date of Birth: " . $dob . "</p>";
     echo "<p>Age: " . $age . "</p>";
     echo "<p>Role: " . $role . "</p>";
     echo "</div>";
