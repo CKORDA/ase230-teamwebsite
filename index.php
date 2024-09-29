@@ -1,35 +1,42 @@
 <?php
+include 'functions.php';
+
 // Define an array for member information
 $teamMembers = [
     [
         "name" => "Cheyenne Korda",
         "role" => "Cyber Security Analyst",
       //  "link" => "http://localhost/ase230/02/CHEYENNE_KORDA.php",
-        "image" => "assets/images/profileCK.jpg"
+        "image" => "assets/images/profileCK.jpg",
          "dateofBirth" =>"2004-03-14"
     ],
     [
         "name" => "Ramatoulaye signate",
         "role" => "software developer",
        // "link" => "http://localhost/nku/ase230/Resume/01/Rama_SIGNATE.php",
-        "image" => "assets/images/profile.jpg"
+        "image" => "assets/images/profile.jpg",
       "dateofBirth" =>"2000-11-21"
     ],
     [
         "name" => "Evan McQueary",
         "role" => "Cybersecurity Analyst",
         // "link" => "http://localhost/Assignment_1/Evan_McQueary.php",
-        "image" => "assets/images/ProfileEM.jpg"
+        "image" => "assets/images/ProfileEM.jpg",
        "dateofBirth" =>"--"
     ],
     [
         "name" => "Monju Tanakajima",
         "role" => "Cybersecurity Specialist",
         "link" => "",
-        "image" => "assets/images/ProfileMT.jpg" 
+        "image" => "assets/images/ProfileMT.jpg",
         "dateofBirth" =>"2004-02-07"
     ]
 ];
+
+// Loop through each member and call the displayCard function to display their information
+foreach ($teamMembers as $member) {
+    displayCard($member);
+}
 ?>
 
 <!DOCTYPE html>
