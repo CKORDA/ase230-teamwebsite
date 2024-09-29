@@ -11,8 +11,8 @@ $teamMembers = [
          "dob" =>"2004-03-14"
     ],
     [
-        "name" => "Ramatoulaye signate",
-        "role" => "software developer",
+        "name" => "Ramatoulaye Signate",
+        "role" => "Software Developer",
        // "link" => "http://localhost/nku/ase230/Resume/01/Rama_SIGNATE.php",
         "image" => "assets/images/profile.jpg",
       "dob" =>"2000-11-21"
