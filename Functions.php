@@ -22,5 +22,29 @@ function displayCard($memberInfo) {
     echo "<p>Role: " . $role . "</p>";
     echo "</div>";
 }
+
+// Function to display Work Experience
+function workExperience($teamMembers, $memberNumber) {
+    $experienceName = $teamMembers[$memberNumber]['experience name'];
+    $location = $teamMembers[$memberNumber]['experience location'];
+    $year = $teamMembers[$memberNumber]['year'];
+    $description = $teamMembers[$memberNumber]['description of the role'];
+    $achievements = $teamMembers[$memberNumber]['achievements'];
+
+    echo '<div class="work-experience">';
+    echo '<h3>' . $experienceName . ' at ' . $location . '</h3>';
+    echo '<p>' . $year . '</p>';
+    echo '<p>' . $description . '</p>';
+    echo '<h4>Achievements:</h4>';
+    echo '<ul>';
+    foreach ($achievements as $achievement) {
+        echo '<li>' . $achievement . '</li>';
+    }
+    echo '</ul>';
+    echo '</div>';
+}
+foreach ($teamMembers as $index => $memberInfo) { 
+    workExperience($teamMembers, $index);
+}
 ?>
 
