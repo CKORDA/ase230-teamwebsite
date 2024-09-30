@@ -303,7 +303,30 @@ $teamMembers=[
 	
 ];
 $index=$_GET['index'];
-//Function displayWork experience here the person doing this funtion can delete this line.
+
+function workExperience($teamMembers, $memberNumber) {
+    $experienceName = $teamMembers[$memberNumber]['experience name'];
+    $location = $teamMembers[$memberNumber]['experience location'];
+    $year = $teamMembers[$memberNumber]['year'];
+    $description = $teamMembers[$memberNumber]['description of the role'];
+    $achievements = $teamMembers[$memberNumber]['achievements'];
+
+    echo '<div class="work-experience">';
+    echo '<h3>' . $experienceName . ' at ' . $location . '</h3>';
+    echo '<p>' . $year . '</p>';
+    echo '<p>' . $description . '</p>';
+    echo '<h4>Achievements:</h4>';
+    echo '<ul>';
+    foreach ($achievements as $achievement) {
+        echo '<li>' . $achievement . '</li>';
+    }
+    echo '</ul>';
+    echo '</div>';
+}
+foreach ($teamMembers as $index => $memberInfo) { 
+    workExperience($teamMembers, $index);
+}
+
 
 function memberAge($dateofBirth){
     $DOB = new DateTime($dateofBirth);
@@ -382,46 +405,15 @@ function memberAge($dateofBirth){
 			    <div class="row">
 				    <div class="col-lg-9">
 					    <section class="resume-section experience-section mb-5">
-						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Work Experience</h2>
-						    <div class="resume-section-content">
-							    <div class="resume-timeline position-relative">
-								    <article class="resume-timeline-item position-relative pb-5">
-									    
-									    <div class="resume-timeline-item-header mb-2">
-										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1"><?= $teamMembers[$index]['experience name']?></h3>
-										        <div class="resume-company-name ms-auto"><?= $teamMembers[$index]['experience location']?></div>
-										    </div><!--//row-->
-										    <div class="resume-position-time"><?= $teamMembers[$index]['year']?></div>
-									    </div><!--//resume-timeline-item-header-->
-									    <div class="resume-timeline-item-desc">
-										<?= $teamMembers[$index]['description of the role']?>
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
-										    <p>
-                                                
-                                                
-                                                </p>
-										    <ul>
-											 <?php
-											 foreach($teamMembers[$index]['achievements'] as $item){ ?>
-											    <li> <?= $item?></li>
-												<?php }?>
-											</ul>
-										    
-									    </div><!--//resume-timeline-item-desc-->
-
-								    </article><!--//resume-timeline-item-->
-								    
-						
-								    
-								   
-								    
-								    
-									</div><!--//resume-timeline-->
-							    
-							    
-							    
-						    </div>
+						<h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Work Experience</h2>
+						<div class="resume-section-content">
+							<div class="resume-timeline position-relative">
+								<?php 
+								// Call the displayWorkExperience function with the relevant work experience data
+								displayWorkExperience($teamMembers[$index]); 
+								?>
+							</div><!--//resume-timeline-->
+						</div>
 					    </section><!--//projects-section-->
 				    </div>
 				    <div class="col-lg-3">
