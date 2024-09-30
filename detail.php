@@ -393,48 +393,33 @@ function workExperience($teamMembers, $memberNumber) {
 			    </section><!--//summary-section-->
 			    <div class="row">
 				    <div class="col-lg-9">
-					    <section class="resume-section experience-section mb-5">
-						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Work Experience</h2>
-						    <div class="resume-section-content">
-							    <div class="resume-timeline position-relative">
-								    <article class="resume-timeline-item position-relative pb-5">
-									    
-									    <div class="resume-timeline-item-header mb-2">
-										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1"><?= $teamMembers[$index]['experience name']?></h3>
-										        <div class="resume-company-name ms-auto"><?= $teamMembers[$index]['experience location']?></div>
-										    </div><!--//row-->
-										    <div class="resume-position-time"><?= $teamMembers[$index]['year']?></div>
-									    </div><!--//resume-timeline-item-header-->
-									    <div class="resume-timeline-item-desc">
-										<?= $teamMembers[$index]['description of the role']?>
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
-										    <p>
-                                                
-                                                
-                                                </p>
-										    <ul>
-											 <?php
-											 foreach($teamMembers[$index]['achievements'] as $item){ ?>
-											    <li> <?= $item?></li>
-												<?php }?>
-											</ul>
-										    
-									    </div><!--//resume-timeline-item-desc-->
+					<section class="resume-section experience-section mb-5">
+						<h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Work Experience</h2>
+						<div class="resume-section-content">
+							<div class="resume-timeline position-relative">
+								<?php foreach ($teamMembers as $index => $memberInfo) { ?>
+									<article class="resume-timeline-item position-relative pb-5">
+										
+										<div class="resume-timeline-item-header mb-2">
+											<div class="d-flex flex-column flex-md-row">
+												<?php workExperience($teamMembers, $index); ?>
+											</div><!--//row-->
+										</div><!--//resume-timeline-item-header-->
 
-								    </article><!--//resume-timeline-item-->
-								    
-						
-								    
-								   
-								    
-								    
-									</div><!--//resume-timeline-->
-							    
-							    
-							    
-						    </div>
-					    </section><!--//projects-section-->
+										<div class="resume-timeline-item-desc">
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
+											<ul>
+												<?php
+												foreach ($teamMembers[$index]['achievements'] as $item) { ?>
+													<li><?= $item ?></li>
+												<?php } ?>
+											</ul>
+										</div><!--//resume-timeline-item-desc-->
+									</article><!--//resume-timeline-item-->
+								<?php } ?>
+							</div><!--//resume-timeline-->
+						</div>
+					</section><!--//projects-section-->
 				    </div>
 				    <div class="col-lg-3">
 					    <section class="resume-section skills-section mb-5">
