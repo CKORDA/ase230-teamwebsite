@@ -1,6 +1,6 @@
 ASE230 -- Group Project
 
-Ramatoulaye Signate
-Monju Tanakajima
-Evan McQueary
-Cheyenne Korda
+Ramatoulaye Signate -- memberAge
+Monju Tanakajima -- memberInfo
+Evan McQueary -- workExperience
+Cheyenne Korda -- team lead
