@@ -1,6 +1,6 @@
 ASE230 -- Group Project
 
 Ramatoulaye Signate
-Manju Tanakajima
+Monju Tanakajima
 Evan McQueary
 Cheyenne Korda
