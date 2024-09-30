@@ -36,11 +36,6 @@ $teamMembers = [
 ];
 
 
-// Loop through each member and call the displayCard function to display their information
-foreach ($teamMembers as $member) {
-    displayCard($member);
-}
-
 function memberAge($dateofBirth){
     $DOB = new DateTime($dateofBirth);
     $todayDate = new DateTime();
@@ -48,9 +43,12 @@ function memberAge($dateofBirth){
     return $age;
 }
 
-// write the displayMember function
+// Loop through each member and call the displayCard function to display their information
+foreach ($teamMembers as $member) {
+    displayCard($member);
+}
 
-// write the memberInfo function
+
 
 
 ?>
