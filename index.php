@@ -1,4 +1,7 @@
 <?php
+// Include the functions.php file
+include 'functions.php'; 
+
 // Define an array for member information
 $teamMembers = [
     [
@@ -17,7 +20,7 @@ $teamMembers = [
         "name" => "Evan McQueary",
         "role" => "Cybersecurity Analyst",
         "image" => "assets/images/ProfileEM.jpg",
-        "dob" => "--"
+        "dob" => "2003-07-01"
     ],
     [
         "name" => "Monju Tanakajima",
@@ -26,26 +29,6 @@ $teamMembers = [
         "dob" => "2004-02-07"
     ]
 ];
-
-function memberAge($dateofBirth) {
-    $DOB = new DateTime($dateofBirth);
-    $todayDate = new DateTime();
-    $age = $todayDate->diff($DOB)->y;
-    return $age;
-}
-
-function displayCard($member) {
-    echo '<div class="member-card">';
-    echo '    <div class="member-image">';
-    echo '        <img src="' . htmlspecialchars($member['image']) . '" alt="' . htmlspecialchars($member['name']) . '" width="150" height="220">';
-    echo '    </div>';
-    echo '    <div class="member-info">';
-    echo '        <h3 class="member-name">' . htmlspecialchars($member['name']) . '</h3>';
-    echo '        <p class="member-role">' . htmlspecialchars($member['role']) . '</p>';
-    echo '        <p class="member-age">Age: ' . memberAge($member['dob']) . '</p>';
-    echo '    </div>';
-    echo '</div>';
-}
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +52,18 @@ function displayCard($member) {
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/pillar-1.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        .primary-info {
+            text-align: left; /* Ensures text is left-aligned */
+        }
+
+        .title {
+            margin-bottom: 0.5rem; /* Adjusts the margin for better spacing */
+        }
+        }
+    </style>
 </head>
 
 <body>
@@ -82,16 +77,12 @@ function displayCard($member) {
 <section class="team-section text-center pt-4">
     <div class="container">
         <h2 class="text-center mb-4">Meet the Team</h2>
-        <div class="row">
-            <?php
-            // Loop through each member and call the displayCard function to display their information
-            foreach ($teamMembers as $member) {
-                echo '<div class="col-md-3">'; // Assuming a grid layout
-                displayCard($member);
-                echo '</div>';
-            }
-            ?>
-        </div>
+        <?php
+        // Loop through each member and call the displayCard function to display their information
+        foreach ($teamMembers as $member) {
+            displayCard($member);
+        }
+        ?>
     </div>
 </section>
 
