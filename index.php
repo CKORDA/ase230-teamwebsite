@@ -7,45 +7,31 @@ $teamMembers = [
     [
         "name" => "Cheyenne Korda",
         "role" => "Cyber Security Analyst",
-        // "link" => "http://localhost/ase230/02/CHEYENNE_KORDA.php",
+
         "image" => "assets/images/profileCK.jpg",
         "dob" => "2004-03-14"
     ],
     [
         "name" => "Ramatoulaye Signate",
         "role" => "Software Developer",
-        // "link" => "http://localhost/nku/ase230/Resume/01/Rama_SIGNATE.php",
+
         "image" => "assets/images/profile.jpg",
         "dob" => "2000-11-21"
     ],
     [
         "name" => "Evan McQueary",
         "role" => "Cybersecurity Analyst",
-        // "link" => "http://localhost/Assignment_1/Evan_McQueary.php",
+
         "image" => "assets/images/ProfileEM.jpg",
-        "dob" => "--"
+        "dob" => "2003-07-01"
     ],
     [
         "name" => "Monju Tanakajima",
         "role" => "Cybersecurity Specialist",
-        "link" => "",
         "image" => "assets/images/ProfileMT.jpg",
         "dob" => "2004-02-07"
     ]
 ];
-
-
-function memberAge($dateofBirth) {
-    $DOB = new DateTime($dateofBirth);
-    $todayDate = new DateTime();
-    $age = $todayDate->diff($DOB)->y;
-    return $age;
-}
-
-// Loop through each member and call the displayCard function to display their information
-foreach ($teamMembers as $member) {
-    displayCard($member);
-}
 
 ?>
 
@@ -70,44 +56,43 @@ foreach ($teamMembers as $member) {
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/pillar-1.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        .primary-info {
+            text-align: left; /* Ensures text is left-aligned */
+        }
+
+        .title {
+            margin-bottom: 0.5rem; /* Adjusts the margin for better spacing */
+        }
+        }
+    </style>
 </head>
 
 <body>
 <article class="resume-wrapper text-center position-relative">
     <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
         <h1 class="py-4 text-center">OUR AMAZING TEAM</h1>
-
-        <?php
-        $index = 0;
-        foreach ($teamMembers as $member) { ?>
-            <header class="resume-header mt-4 pt-4 pt-md-0">
-                <div class="row">
-                    <div class="col-block col-md-auto resume-picture-holder text-center text-md-start">
-                        <img class="picture" src="<?php echo $member['image']; ?>" alt="" width="150" height="220">
-                    </div><!--//col-->
-                    <div class="col">
-                        <div class="row p-4 justify-content-center justify-content-md-between">
-                            <div class="primary-info col-auto">
-                                <h1 class="name mt-0 mb-1 text-white text-uppercase"><?php echo $member['name']; ?></h1>
-                                <div class="title mb-3"><?php echo $member['role']; ?></div>
-                                <a href="detail.php?index=<?php echo $index; ?>" class="btn btn-secondary">See full profile</a>
-                            </div><!--//primary-info-->
-                            <div class="secondary-info col-auto mt-2">
-                            </div><!--//secondary-info-->
-                        </div><!--//row-->
-                    </div><!--//col-->
-                </div><!--//row-->
-            </header>
-            
-        <?php 
-        $index++;
-    } ?>
-
     </div>
 </article>
 
+
+<!-- Member display section -->
+<section class="team-section text-center pt-4">
+    <div class="container">
+        <h2 class="text-center mb-4">Meet the Team</h2>
+        <?php
+        // Loop through each member and call the displayCard function to display their information
+        foreach ($teamMembers as $member) {
+            displayCard($member);
+        }
+        ?>
+
+    </div>
+</section>
+
 <footer class="footer text-center pt-2 pb-5">
-    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
     <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by Cheyenne, Ramatoulaye, Monju, and Evan</small>
 </footer>
 </body>
