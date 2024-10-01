@@ -7,18 +7,21 @@ $teamMembers = [
     [
         "name" => "Cheyenne Korda",
         "role" => "Cyber Security Analyst",
+
         "image" => "assets/images/profileCK.jpg",
         "dob" => "2004-03-14"
     ],
     [
         "name" => "Ramatoulaye Signate",
         "role" => "Software Developer",
+
         "image" => "assets/images/profile.jpg",
         "dob" => "2000-11-21"
     ],
     [
         "name" => "Evan McQueary",
         "role" => "Cybersecurity Analyst",
+
         "image" => "assets/images/ProfileEM.jpg",
         "dob" => "2003-07-01"
     ],
@@ -29,6 +32,7 @@ $teamMembers = [
         "dob" => "2004-02-07"
     ]
 ];
+
 ?>
 
 <!DOCTYPE html>
@@ -73,6 +77,7 @@ $teamMembers = [
     </div>
 </article>
 
+
 <!-- Member display section -->
 <section class="team-section text-center pt-4">
     <div class="container">
@@ -83,6 +88,7 @@ $teamMembers = [
             displayCard($member);
         }
         ?>
+
     </div>
 </section>
 
