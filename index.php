@@ -1,3 +1,7 @@
+<?php
+// Include the functions.php file
+include 'functions.php'; 
+
 // Define an array for member information
 $teamMembers = [
     [
