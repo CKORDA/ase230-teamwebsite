@@ -1,4 +1,5 @@
 <?php
+include 'functions.php';
 $teamMembers=[
 	[
 		'firstname'=>'Cheyenne',
@@ -377,26 +378,25 @@ $index=$_GET['index'];
 						<h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Work Experience</h2>
 						<div class="resume-section-content">
 							<div class="resume-timeline position-relative">
-								<?php foreach ($teamMembers as $index => $memberInfo) { ?>
 									<article class="resume-timeline-item position-relative pb-5">
-										
 										<div class="resume-timeline-item-header mb-2">
 											<div class="d-flex flex-column flex-md-row">
-												<?php workExperience($teamMembers, $index); ?>
+												<?php workExperience($teamMembers, $index); // Call the function with valid parameters ?>
 											</div><!--//row-->
 										</div><!--//resume-timeline-item-header-->
-
+										
 										<div class="resume-timeline-item-desc">
-											<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
-											<ul>
-												<?php
-												foreach ($teamMembers[$index]['achievements'] as $item) { ?>
-													<li><?= $item ?></li>
-												<?php } ?>
-											</ul>
-										</div><!--//resume-timeline-item-desc-->
-									</article><!--//resume-timeline-item-->
-								<?php } ?>
+											<!-- Additional content can go here -->
+										</div>
+										<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
+										<ul>
+											<?php
+											foreach ($teamMembers[$index]['achievements'] as $item) { ?>
+												<li><?= $item ?></li>
+											<?php } ?>
+										</ul>
+									</div><!--//resume-timeline-item-desc-->
+								</article><!--//resume-timeline-item-->
 							</div><!--//resume-timeline-->
 						</div>
 					</section><!--//projects-section-->
@@ -543,20 +543,13 @@ $index=$_GET['index'];
 					</div>
 				</section><!--//projects-section-->
 		    </div><!--//resume-body-->
-		    
-		    
+ 
 	    </div>
 		<a href="http://localhost<?= dirname($_SERVER['PHP_SELF']) ?>/index.php">Go back to the list of the members of the band </a>
-
     </article> 
-    
     <footer class="footer text-center pt-2 pb-5">
 	    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
         <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> <?='by Ramatoulaye, Cheyenne, Monju, and Evan'?></small>
     </footer>
-
-    
-
 </body>
-
 </html> 
