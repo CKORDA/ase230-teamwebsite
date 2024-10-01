@@ -1,39 +1,55 @@
-<?php
-include 'Functions.php';
-
 // Define an array for member information
 $teamMembers = [
     [
         "name" => "Cheyenne Korda",
         "role" => "Cyber Security Analyst",
+        // "link" => "http://localhost/ase230/02/CHEYENNE_KORDA.php",
         "image" => "assets/images/profileCK.jpg",
         "dob" => "2004-03-14"
     ],
     [
         "name" => "Ramatoulaye Signate",
         "role" => "Software Developer",
+        // "link" => "http://localhost/nku/ase230/Resume/01/Rama_SIGNATE.php",
         "image" => "assets/images/profile.jpg",
         "dob" => "2000-11-21"
     ],
     [
         "name" => "Evan McQueary",
         "role" => "Cybersecurity Analyst",
+        // "link" => "http://localhost/Assignment_1/Evan_McQueary.php",
         "image" => "assets/images/ProfileEM.jpg",
         "dob" => "--"
     ],
     [
         "name" => "Monju Tanakajima",
         "role" => "Cybersecurity Specialist",
+        "link" => "",
         "image" => "assets/images/ProfileMT.jpg",
         "dob" => "2004-02-07"
     ]
 ];
+
+
+function memberAge($dateofBirth) {
+    $DOB = new DateTime($dateofBirth);
+    $todayDate = new DateTime();
+    $age = $todayDate->diff($DOB)->y;
+    return $age;
+}
+
+// Loop through each member and call the displayCard function to display their information
+foreach ($teamMembers as $member) {
+    displayCard($member);
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Our Amazing Team</title>
+    <title>Our amazing team</title>
+
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,41 +73,38 @@ $teamMembers = [
     <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
         <h1 class="py-4 text-center">OUR AMAZING TEAM</h1>
 
-        <!-- PHP Loop to display each team member card -->
         <?php
         $index = 0;
         foreach ($teamMembers as $member) { ?>
             <header class="resume-header mt-4 pt-4 pt-md-0">
                 <div class="row">
-                    <!-- Profile Picture -->
                     <div class="col-block col-md-auto resume-picture-holder text-center text-md-start">
-                        <img class="picture" src="<?php echo $member['image']; ?>" alt="<?php echo $member['name']; ?>" width="150" height="220">
-                    </div>
-                    
-                    <!-- Member Information -->
+                        <img class="picture" src="<?php echo $member['image']; ?>" alt="" width="150" height="220">
+                    </div><!--//col-->
                     <div class="col">
                         <div class="row p-4 justify-content-center justify-content-md-between">
                             <div class="primary-info col-auto">
                                 <h1 class="name mt-0 mb-1 text-white text-uppercase"><?php echo $member['name']; ?></h1>
                                 <div class="title mb-3"><?php echo $member['role']; ?></div>
-
-                                <!-- Link to detail page -->
                                 <a href="detail.php?index=<?php echo $index; ?>" class="btn btn-secondary">See full profile</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </div><!--//primary-info-->
+                            <div class="secondary-info col-auto mt-2">
+                            </div><!--//secondary-info-->
+                        </div><!--//row-->
+                    </div><!--//col-->
+                </div><!--//row-->
             </header>
+            
         <?php 
-            $index++;
-        } ?>
+        $index++;
+    } ?>
+
     </div>
 </article>
 
-<!-- Footer Section -->
 <footer class="footer text-center pt-2 pb-5">
-    <small class="copyright">Designed with <i class="fas fa-heart"></i> by Cheyenne, Ramatoulaye, Monju, and Evan</small>
+    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+    <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by Cheyenne, Ramatoulaye, Monju, and Evan</small>
 </footer>
-
 </body>
 </html>
