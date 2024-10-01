@@ -387,7 +387,7 @@ $index=$_GET['index'];
 										
 										<div class="resume-timeline-item-desc">
 											<!-- Additional content can go here -->
-										</div>
+										
 										<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
 										<ul>
 											<?php
@@ -395,8 +395,8 @@ $index=$_GET['index'];
 												<li><?= $item ?></li>
 											<?php } ?>
 										</ul>
-									</div><!--//resume-timeline-item-desc-->
-								</article><!--//resume-timeline-item-->
+										</div><!--//resume-timeline-item-desc-->
+									</article><!--//resume-timeline-item-->
 							</div><!--//resume-timeline-->
 						</div>
 					</section><!--//projects-section-->
