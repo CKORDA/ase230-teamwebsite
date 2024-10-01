@@ -28,7 +28,7 @@ function displayCard($member) {
     echo '        </div><!--//col-->';
     echo '    </div><!--//row-->';
     echo '</header>';
-    
+}  
   function workExperience($teamMembers, $memberNumber) {
     $experienceName = $teamMembers[$memberNumber]['experience name'];
     $location = $teamMembers[$memberNumber]['experience location'];
